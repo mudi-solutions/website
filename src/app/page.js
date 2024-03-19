@@ -1,3 +1,4 @@
+import QuotationForm from "@/components/form/quotation";
 import Navbar from "@/components/navbar";
 import { Select } from "@/components/ui/input/select";
 import { Input } from "@/components/ui/input/text";
@@ -80,6 +81,9 @@ const assurances = [
 ];
 
 export default function Home() {
+ 
+
+
   return (
     <>
       <div className="hidden lg:flex relative container mx-auto my-6  ">
@@ -87,50 +91,17 @@ export default function Home() {
           <h1 className="text-3xl font-medium mb-2">
             Start your project today!
           </h1>
-          <label>
-            I need
-            <Select placeholder="---Choose Truckload---" />
-          </label>
-
-          <label>
-            Commodity
-            <Select placeholder="---Choose Commodity---" />
-          </label>
-
-          <div className="flex gap-3">
-            <label>
-              Date
-              <Input type="date" placeholder="Delivery point" />
-            </label>
-            <label>
-              Duration
-              <Input type="text" placeholder="Number of days" />
-            </label>
-          </div>
-
-          <label>
-            Destination
-            <Input type="text" placeholder="Delivery point" />
-          </label>
-
-          <label>
-            Email
-            <Input type="email" placeholder="Email address" />
-          </label>
-
-          <input
-            type="submit"
-            className=" h-12 bg-[#FF6B19] w-full font-medium rounded-md"
-            value="Request estimate"
-          />
+          <QuotationForm />
         </div>
 
-        <div className="min-h-[570px] absolute -z-10 right-0 -top-3 w-[calc(-544px+100vw)] h-[calc(-185px+100vh)] rounded-md ">
+        <div className="min-h-[570px] absolute -z-10 right-0 -top-3 w-[calc(-544px+100vw)] h-[calc(-210px+100vh)] rounded-md ">
           <div className="relative w-full h-full">
             <Image
               src="/assets/hero.png"
               alt="hero"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={true}
               className=" object-cover object-center rounded-md"
             />
           </div>
@@ -139,7 +110,8 @@ export default function Home() {
 
       <div className="w-full lg:hidden">
         <div className="relative h-[300px] object-cover object-center">
-          <Image src={"/assets/excavator.png"} alt="excavator" fill />
+          <Image src={"/assets/excavator.png"} alt="excavator"         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+ fill />
         </div>
 
         <div className="-mt-[360px] relative">
@@ -171,7 +143,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container mx-auto px-3 space-y-6 md:px-0">
+      <div className="container mx-auto px-3 space-y-6 pb-6 md:px-0">
         <section id="about" className="md:flex h-full gap-8 items-stretch bg-black rounded-xl md:px-10 mt-10 py-10 p-4">
           <div className="text-white flex-1">
             <h2 className="font-bold text-xl tracking-tight leading-tight mb-3 max-w-[20ch] md:text-3xl">
@@ -207,6 +179,8 @@ export default function Home() {
                 src="/assets/tipper.png"
                 alt="excavator"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
                 className="h-full  rounded-xl "
               />
             </div>
@@ -244,6 +218,8 @@ export default function Home() {
                     src="/assets/path20.svg"
                     alt="arrow"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
                     className="top"
                   />
                 </div>
@@ -260,7 +236,8 @@ export default function Home() {
               </div>
               <div className="p-12 hidden md:block">
                 <div className="relative h-full w-full  min-h-full">
-                  <Image src="/assets/path84.svg" alt="arrow" fill />
+                  <Image src="/assets/path84.svg" alt="arrow"         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+ fill />
                 </div>
               </div>
               <div className="flex flex-col space-y-1.5 mb-4">
@@ -282,6 +259,8 @@ export default function Home() {
                 src="/assets/trailer.png"
                 alt="trailer"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
                 className="h-full  rounded-lg "
               />
             </div>
@@ -302,6 +281,8 @@ export default function Home() {
                     src="/assets/excavator-2.png"
                     alt="trailer"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
                     className="object-cover object-center"
                   />
                 </div>
@@ -327,6 +308,8 @@ export default function Home() {
                     src="/assets/trailer-2.png"
                     alt="trailer"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
                     className="object-cover object-center"
                   />
                 </div>
@@ -353,6 +336,8 @@ export default function Home() {
                     src="/assets/tipper.png"
                     alt="trailer"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
                     className="object-cover object-center"
                   />
                 </div>
@@ -374,8 +359,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="md:flex h-full gap-3 items-stretch bg-black rounded-xl  md:px-10  py-6 p-4">
-          <div className="text-white flex-1 flex-col flex justify-between ">
+        <section className="md:flex h-full gap-3 items-stretch space-y-5 md:space-y-0 bg-black rounded-xl  md:px-10  py-6 p-4">
+          <div className="text-white flex-1 flex-col flex justify-between gap-5 ">
             <div className="space-y-6">
               <h2 className="font-bold text-xl tracking-tight leading-tight mb-3 max-w-[20ch] md:text-3xl">
                 READY TO EXPERIENCE LOGISTICS EXCELLENCE?
@@ -403,6 +388,8 @@ export default function Home() {
                 src="/assets/trailer-dark.png"
                 alt="excavator"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
                 className="h-full  rounded-xl "
               />
             </div>
