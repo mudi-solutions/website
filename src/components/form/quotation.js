@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { Input } from "@/components/ui/input/text";
-import { Select } from "@/components/ui/input/select";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { Select } from "../ui/input/select";
 
 const truckloadOptions = [
   {
@@ -103,6 +103,7 @@ export default function QuotationForm() {
             error={errors.truckload?.message && true}
             {...register("truckload", { required: "Field is required" })}
           />
+  
         </label>
 
         <label>

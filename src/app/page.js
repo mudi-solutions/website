@@ -1,8 +1,10 @@
+
 import QuotationForm from "@/components/form/quotation";
 import Navbar from "@/components/navbar";
 import { Select } from "@/components/ui/input/select";
 import { Input } from "@/components/ui/input/text";
 import Image from "next/image";
+
 
 const assurances = [
   {
@@ -80,6 +82,20 @@ const assurances = [
   },
 ];
 
+const truckloadOptions = [
+  {
+    value: "Excavator",
+    label: "Excavator",
+  },
+  {
+    value: "Dump Trucks - Tippers",
+    label: "Dump Trucks - Tippers",
+  },
+  {
+    value: "Low-bed trailer",
+    label: "Low-bed trailer",
+  },
+];
 export default function Home() {
  
 
@@ -118,20 +134,43 @@ export default function Home() {
           <div className="w-full flex items-end h-[300px] justify-center transform translate-y-4 "></div>
           <div className="m-3 ">
             <div className="p-4 rounded-md bg-white shadow-md flex  flex-col gap-1">
-              <label>
-                I need
-                <Select placeholder="---Choose Truckload---" />
-              </label>
+            <label>
+          <span className="flex gap-2 items-center">
+            Truckload
+  
+          </span>
+          <Select
+            placeholder="---Choose Truckload---"
+            options={truckloadOptions}
+        
+          />
+  
+        </label>
+        <label>
+          <span className="flex gap-2 items-center">
+            Destination
+ 
+          </span>
+          <Input
+            type="text"
+            placeholder="Delivery point"
+        
+          />
+        </label>
 
-              <label>
-                Destination
-                <Input type="text" placeholder="Delivery point" />
-              </label>
+        <label>
+          <span className="flex gap-2 items-center">
+            Email
+       
+          </span>
 
-              <label>
-                Email
-                <Input type="email" placeholder="Email address" />
-              </label>
+          <Input
+            type="text"
+            placeholder="Email address"
+   
+         
+          />
+        </label>
 
               <input
                 type="submit"
